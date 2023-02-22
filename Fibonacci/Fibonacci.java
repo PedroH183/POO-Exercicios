@@ -1,4 +1,4 @@
-class Fibonnaci{
+class Fibonacci{
 
     private static int fibo( int term ){
         if( term == 1 || term == 0  ){
