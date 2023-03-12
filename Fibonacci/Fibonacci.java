@@ -1,26 +1,19 @@
 class Fibonacci{
 
-    private static int fibo( int term ){
-        if( term == 1 || term == 0  ){
-            return term;
+    private static int fibo( int term )
+    {
+        if (term <= 1) {
+            return (term);
         }
-        
-        System.out.println(term);
 
-        return(fibo(term-2) + fibo(term-1));
+        return( fibo(term -1 ) + fibo( term - 2 ) );
     }
 
     public static void main(String[] args){
-        int prox = 1;
-        int ant = 0;
-        int aux = 0;
 
-        for( int terms = 9 ; terms != 0 ; --terms ){
-            System.out.println(ant);
-            aux = ant;
-            ant = prox;
-            prox += aux;
+        for(int i = 1 ; i <= 5 ; ++i)
+        {
+            System.out.println(">>" + fibo(i));
         }
-        fibo(4);
-   }
+    }
 }
