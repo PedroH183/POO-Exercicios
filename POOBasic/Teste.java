@@ -9,7 +9,10 @@ public class Teste {
         conta.agencia = "Fisica 001";
         conta.numeroConta = 001;
         conta.titular = cliente;
-
+        conta.dataAberturaConta = new Data();
+        conta.dataAberturaConta.dia = 12;
+        conta.dataAberturaConta.mes = 03;
+        conta.dataAberturaConta.ano = 2023;
 
         System.out.println(conta.recuperaDadosParaImpressao());
     }

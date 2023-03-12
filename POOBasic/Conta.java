@@ -4,6 +4,7 @@ public class Conta {
     String agencia;
     Cliente titular;
     int numeroConta;
+    Data dataAberturaConta;
 
     Double depositar(int valor){
         return this.saldo += valor;
@@ -23,7 +24,12 @@ public class Conta {
 
     String recuperaDadosParaImpressao(){
         
-        String textPrint = "\nAgencia>" + this.agencia + "\nNumeroConta>"+ this.numeroConta + "\nSaldo>"+ this.saldo + "\nNome Titular>" + this.titular.nome + "\nTitular Idade>" + this.titular.idade;
+        String textPrint = "\nAgencia>" + this.agencia ;
+        textPrint += "\nNumeroConta>"+ this.numeroConta;
+        textPrint += "\nSaldo>"+ this.saldo;
+        textPrint += "\nNome Titular>" + this.titular.nome;
+        textPrint += "\nTitular Idade>" + this.titular.idade;
+        textPrint += "\nData Abertura da Conta>" + this.dataAberturaConta.DataStoraged();
         return textPrint;
     }
 
