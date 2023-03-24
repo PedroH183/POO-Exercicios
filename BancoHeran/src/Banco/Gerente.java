@@ -49,7 +49,5 @@ public class Gerente extends Funcionario{
         System.out.println("Nome >> " + super.getNome());
         System.out.println("Salario >> " + super.getSalario());
         System.out.println(" Qtd Colaboradores >>" + this.getQtdFuncionarioGerenciados());
-        System.out.println("------------------------------------------------");
-
     }
 }
