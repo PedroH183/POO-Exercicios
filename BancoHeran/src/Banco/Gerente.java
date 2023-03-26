@@ -20,7 +20,6 @@ public class Gerente extends Funcionario{
         System.out.println("Acesso Negado ! ");
         return false;
     }
-
     @Override
     public double getBonificacao(){
         /*
@@ -29,14 +28,12 @@ public class Gerente extends Funcionario{
          * */
         return super.getSalario() * 0.15;
     }
-
     public Gerente(int passwrd, String nome, String cpf, int salario, int qtdSubordinados){
         super(nome, salario, cpf);
         this.senha = passwrd;
         this.setQtdFuncionarioGerenciados(qtdSubordinados);
 
     }
-
     public void getAtributtes(int senha){
 
         if(!this.autentica(senha)){
