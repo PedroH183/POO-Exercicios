@@ -1,7 +1,7 @@
 package br.com.fila;
 
 public class Fila {
-    public Integer data;
+    protected Integer data;
     protected Fila prox;
 
     public Fila(int data, Fila prox) {
@@ -21,7 +21,6 @@ public class Fila {
         }
 
         aux.prox = new Fila(data, null);
-        return ;
     }
 
     public void listValues() {

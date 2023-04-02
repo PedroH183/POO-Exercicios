@@ -1,5 +1,4 @@
 import br.com.fila.Fila;
-
 public class Main {
     public static void main(String[] args) {
         Fila my_queue = new Fila(5, (Fila)null);
