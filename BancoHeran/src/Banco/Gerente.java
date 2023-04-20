@@ -13,7 +13,7 @@ public class Gerente extends Funcionario{
     }
     @Override
     public double getBonificacao(){
-        return super.getSalario() * 0.15;
+        return super.getSalario() * 1.15;
     }
     public Gerente(int passwrd, String nome, String cpf, int salario){
         super(nome, salario, cpf);

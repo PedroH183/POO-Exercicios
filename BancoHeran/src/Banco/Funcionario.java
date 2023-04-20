@@ -5,8 +5,9 @@ public class Funcionario {
     private int salario;
     private String cpf;
 
+    // Getters e Setters
     public double getBonificacao(){
-        return this.salario * 0.1;
+        return this.salario * 1.1;
     }
     protected int getSalario() {
         return salario;

@@ -5,11 +5,14 @@ public class Main {
     public static void main(String[] args) {
 
         Gerente gerente = new Gerente(147258, "Agostinho Carrara", "61074145685", 15000);
-        Funcionario funcionario_one = gerente;
+        Funcionario funcionario = new Funcionario("Pedro Henrique", 15000, "15975348625");
 
-        System.out.println("-------Polimorfismo--------");
-        System.out.println("Ambas as bonificaçoes têm que ser iguais !!");
-        System.out.println("By Funcionario :: " + funcionario_one.getBonificacao());
+        // ao criar uma classe gerente e outra funcionario
+        // os métodos de funcionario são diferente dos métodos de gerente
+
+
+        System.out.println("----------------------------");
+        System.out.println("By Funcionario :: " + funcionario.getBonificacao());
         System.out.println("By Gerente ::" + gerente.getBonificacao());
         System.out.println("----------------------------");
     }
