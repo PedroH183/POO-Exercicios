@@ -27,8 +27,7 @@ public class HashMap implements HashMapInteface {
             this.buckets[i] = null;
         }
     }
-
-
+    @Override
     public void put_data(int key, int value){
         int index = hash_func(key);
         Bucket first_element = this.buckets[index];
@@ -40,7 +39,7 @@ public class HashMap implements HashMapInteface {
 
         this.buckets[index].put_data(key,value);
     }
-
+    @Override
     public void get_data(int key){
         int index = hash_func(key);
         Bucket bucket = this.buckets[index];
