@@ -8,18 +8,31 @@ public class Bucket implements BucketInterface {
     protected Integer key;
 
     Bucket(){
+        this.key = null;
         this.value = null;
         this.next_object = null;
     }
+
     Bucket(int key, int value){
         this.key = key;
         this.value = value;
         this.next_object = null;
     }
+    Bucket(int key, int value, Bucket next_object){
+        this.key = key;
+        this.value = value;
+        this.next_object = next_object;
+    }
     @Override
     public void put_data( int key, int value ) {
         Bucket aux_pointer = this;
         Bucket pair_key_value = new Bucket(key, value);
+
+        if( this.key == null && this.value == null ){
+            this.key = key;
+            this.value = value;
+            return;
+        }
 
         while( aux_pointer.next_object != null ){
             aux_pointer = aux_pointer.next_object;
@@ -37,7 +50,19 @@ public class Bucket implements BucketInterface {
         return aux_pointer.value == null ? -1 : aux_pointer.value;
     }
     @Override
-    public void delete_data(int key) {
+    public Bucket delete_data(int key) {
+        int counter = 0;
+        Bucket prev_pointer = this;
+        Bucket new_bucket = new Bucket();
 
+        while( prev_pointer != null ){
+
+            if( prev_pointer.key != key ){
+                new_bucket.put_data(prev_pointer.key, prev_pointer.value);
+            }
+            prev_pointer = prev_pointer.next_object;
+        }
+
+        return new_bucket;
     }
 }

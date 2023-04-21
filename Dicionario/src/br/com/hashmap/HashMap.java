@@ -1,8 +1,10 @@
 package br.com.hashmap;
 
+import br.com.hashmap.interfaces.HashMapInteface;
+
 import java.util.Scanner;
 
-public class HashMap {
+public class HashMap implements HashMapInteface {
     /*
     * Class responsible for manager the buckets into hashmap these buckets are a data structure
     * that represent my linked list of data.
@@ -26,6 +28,7 @@ public class HashMap {
         }
     }
 
+
     public void put_data(int key, int value){
         int index = hash_func(key);
         Bucket first_element = this.buckets[index];
@@ -46,7 +49,27 @@ public class HashMap {
         System.out.println("O valor da key : " + key +" e o value é : " + data);
     }
 
-    // criar função para ler todos da mesma linha.
+    public void get_line(int key){
+
+        int index = hash_func(key);
+        Bucket buckets = this.buckets[index];
+        System.out.println("------------Printing Line-------------");
+        while(buckets != null)
+        {
+            print_data(buckets.key, buckets.value);
+            buckets = buckets.next_object;
+        }
+    }
+    @Override
+    public void delete_data(int key){
+        int index = hash_func(key);
+        this.buckets[index] = this.buckets[index].delete_data(key);
+    }
+
+    private void print_data( int key, int value ){
+        System.out.println("Key : { " + key + " } e o valor { "+ value +" }");
+        System.out.println("--------------------------------------");
+    }
 
     private int hash_func(int key){
         return key % this.key_space;
