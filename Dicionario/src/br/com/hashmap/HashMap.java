@@ -20,8 +20,8 @@ public class HashMap implements HashMapInteface {
     public HashMap(int key_space) {
         
         do {
-            this.key_space = check_space_key(key_space);
-        }while(this.key_space <= 0);
+            check_space_key(key_space);
+        }while( this.key_space <= 0 );
 
         for(int i = 0 ; i < key_space; ++i){
             this.buckets[i] = null;
@@ -73,18 +73,18 @@ public class HashMap implements HashMapInteface {
     private int hash_func(int key){
         return key % this.key_space;
     }
-    private int check_space_key(int key_space){
+    private void check_space_key(int key_space){
         try {
             this.key_space = key_space;
             this.buckets = new Bucket[key_space];
-            return key_space;
-        } catch (ArrayIndexOutOfBoundsException error) {
+        } catch (NegativeArraySizeException error) {
             System.out.print("\n-------------------------------------------------------------");
             System.out.print("\nInsira um valor inteiro, positivo e de preferencia um primo");
-            System.out.print("\n--------------------------------------------------------------");
+            System.out.print("\n--------------------------------------------------------------\n");
             Scanner newKeySpace = new Scanner(System.in);
             this.key_space = newKeySpace.nextInt();
-            return this.key_space;
         }
+
+        return;
     }
 }
